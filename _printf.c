@@ -4,13 +4,13 @@
 
 void _printf(const char *format, ...);
 /**
- * _printf - function to print strings
- *@format: character pointer
+ * _printf - Custom printf function to print strings
+ * @format: character pointer
  */
-
 void _printf(const char *format, ...)
 {
 	va_list args;
+
 	va_start(args, format);
 
 	while (*format != '\0')
@@ -22,26 +22,29 @@ void _printf(const char *format, ...)
 			if (*format == 'd')
 			{
 				int num = va_arg(args, int);
-				printf("%d", num);
+
+				_printfs("%d", num);
 			}
 			else if (*format == 'c')
 			{
 				int character = va_arg(args, int);
-				putchar(character);
+
+				_printfs("%c", character);
 			}
 			else if (*format == 's')
 			{
 				char *str = va_arg(args, char *);
-				fputs(str, stdout);
+
+				_printfs("%s", str);
 			}
 			else if (*format == '%')
 			{
-				putchar('%');
+				_printfs("%%");
 			}
 		}
 		else
 		{
-			putchar(*format);
+			_printfs("%c", *format);
 		}
 
 		format++;
