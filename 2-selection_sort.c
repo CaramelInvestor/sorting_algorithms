@@ -1,37 +1,58 @@
 #include "sort.h"
 
 /**
- * selection_sort - Function that sorts an array of integers
+ * selection_sort - Function that sorts a doubly linked list of integers
  * in ascending order using Selection Sort.
  *
- * @array: The array to be sorted.
- * @size: No of elements in the array.
+ * @list: Pointer to a pointer to the head of the list.
  */
-void selection_sort(int *array, size_t size)
+void selection_sort(listint_t **list)
 {
-	size_t i, j, min_idx;
+	listint_t *current, *min;
 
-	if (size < 2 || array == NULL)
+	if (list == NULL || *list == NULL)
 		return;
 
-	for (i = 0; i < size - 1; i++)
+	current = *list;
+
+	while (current->next != NULL)
 	{
-		min_idx = i;
+		min = current;
+		listint_t *inner_current = current->next;
 
-		for (j = i + 1; j < size; j++)
+		while (inner_current != NULL)
 		{
-			if (array[j] < array[min_idx])
-				min_idx = j;
+			if (inner_current->n < min->n)
+				min = inner_current;
+
+			inner_current = inner_current->next;
 		}
 
-		if (min_idx != i)
+		if (min != current)
 		{
-			int temp = array[i];
+			listint_t *temp = current;
+			listint_t *prev = current->prev;
 
-			array[i] = array[min_idx];
-			array[min_idx] = temp;
+			if (prev != NULL)
+				prev->next = min;
+			else
+				*list = min;
 
-			print_array(array, size);
+			min->prev = prev;
+			current->prev = min;
+			current->next = min->next;
+
+			if (min->next != NULL)
+				min->next->prev = current;
+
+			min->next = temp;
+			current = min;
 		}
+		else
+		{
+			current = current->next;
+		}
+
+		print_list(*list);
 	}
 }
