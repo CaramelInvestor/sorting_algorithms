@@ -14,6 +14,7 @@ void selection_sort(int *array, size_t size)
 	if (array == NULL || size < 2)
 		return;
 
+
 	for (i = 0; i < size - 1; i++)
 	{
 		min_idx = i;
@@ -23,7 +24,6 @@ void selection_sort(int *array, size_t size)
 			if (array[j] < array[min_idx])
 				min_idx = j;
 		}
-
 		if (min_idx != i)
 		{
 			int temp = array[i];
@@ -31,13 +31,12 @@ void selection_sort(int *array, size_t size)
 			array[i] = array[min_idx];
 			array[min_idx] = temp;
 
-			for (j = 0; j < size; j++)
+			_printf("%d", array[0]);
+			for (j = 1; j < size; j++)
 			{
-				if (j > 0)
-					printf(", ");
-				printf("%d", array[j]);
+				_printf(", %d", array[j]);
 			}
-			printf("\n");
+			_printf("\n");
 		}
 	}
 }
