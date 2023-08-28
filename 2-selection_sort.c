@@ -1,5 +1,6 @@
 #include "sort.h"
 
+void selection_sort(listint_t **list);
 /**
  * selection_sort - Function that sorts a doubly linked list of integers
  * in ascending order using Selection Sort.
