@@ -9,6 +9,7 @@ How to select the best sorting algorithm for a given input
 What is a stable sorting algorithm
 
 Question 0
+-Write a function that sorts an array of integers in ascending order using the Bubble sort algorithm
 
 Authors
 CaramelInvestor
