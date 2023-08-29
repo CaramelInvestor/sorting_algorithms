@@ -21,6 +21,8 @@ You’re expected to print the array after each time you swap two elements (See 
 *in the worst case
 
 Question 1
+-Write a function that sorts a doubly linked list of integers in ascending order using the Insertion sort algorithm
+
 
 
 Authors
