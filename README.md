@@ -29,6 +29,9 @@ You’re expected to print the list after each time you swap two elements (See e
 
 -Write in the file 1-O, the big O notations of the time complexity of the Insertion sort algorithm, with 1 notation per line:
 
+*in the best case
+*in the average case
+*in the worst case
 
 Authors
 CaramelInvestor
