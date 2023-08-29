@@ -23,7 +23,7 @@ You’re expected to print the array after each time you swap two elements (See 
 Question 1
 -Write a function that sorts a doubly linked list of integers in ascending order using the Insertion sort algorithm
 
-Prototype: void insertion_sort_list(listint_t **list);
+Prototype: void insertion sortlist(listint_t **list);
 You are not allowed to modify the integer n of a node. You have to swap the nodes themselves.
 You’re expected to print the list after each time you swap two elements (See example below)
 
@@ -32,6 +32,9 @@ You’re expected to print the list after each time you swap two elements (See e
 *in the best case
 *in the average case
 *in the worst case
+
+Question 2
+-Write a function that sorts an array of integers in ascending order using the Selection sort algorithm
 
 Authors
 CaramelInvestor
